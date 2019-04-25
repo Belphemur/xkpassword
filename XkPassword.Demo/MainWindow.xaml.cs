@@ -2,6 +2,7 @@
 using System.Net.Mime;
 using System.Windows;
 using System.Windows.Input;
+using XkPassword.Language;
 using XkPassword.PublicExtensionMethods;
 
 namespace XkPassword.Demo
@@ -61,6 +62,7 @@ namespace XkPassword.Demo
             this._generator.PaddingDigitsAfter = int.Parse(this.tbPadAfter.Text);
             this._generator.PadToLength = int.Parse(this.tbPadLength.Text);
             this._generator.CaseTransform = (CaseTransformation)(this.cbCaseTransform.SelectedIndex);
+            this._generator.DictionaryLanguage = (LanguageFactory.Lang) cbLanguageChoice.SelectedIndex;
             this._generator.CharacterSubstitutions = replacements;
 
             _generator.SymbolAlphabet.FromCharArray((string.IsNullOrEmpty(this.tbSymbolAlphabet.Text)

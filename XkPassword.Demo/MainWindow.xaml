@@ -1,110 +1,113 @@
 ﻿<Window x:Class="XkPassword.Demo.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="XkPassword Demonstration Application" Height="500" Width="525" ResizeMode="NoResize">
+        Title="XkPassword Demonstration Application" Height="525.289" Width="525" ResizeMode="NoResize">
 
     <DockPanel>
         <StackPanel>
-            <DockPanel LastChildFill="True">
-                <Label>Symbol alphabet:</Label>
-                <TextBox Name="tbSymbolAlphabet" Style="{StaticResource placeHolder}" Tag="!@$%^&amp;*-_+=:|~?" />
+            <DockPanel LastChildFill="False" Height="27">
+                <Label Content="Language:"/>
+                <ComboBox x:Name="cbLanguageChoice" SelectedIndex="0" >
+                    <ComboBoxItem Content="English"/>
+                    <ComboBoxItem Content="French"/>
+                </ComboBox>
             </DockPanel>
             <DockPanel LastChildFill="True">
-                <Label>Separator alphabet:</Label>
-                <TextBox Name="tbSeparatorAlphabet" Style="{StaticResource placeHolder}"
+                <Label Content="Symbol alphabet:"/>
+                <TextBox x:Name="tbSymbolAlphabet" Style="{StaticResource placeHolder}" Tag="!@$%^&amp;*-_+=:|~?" />
+            </DockPanel>
+            <DockPanel LastChildFill="True">
+                <Label Content="Separator alphabet:"/>
+                <TextBox x:Name="tbSeparatorAlphabet" Style="{StaticResource placeHolder}"
                          Tag="Defaults to symbol alphabet" />
             </DockPanel>
             <DockPanel LastChildFill="True">
-                <Label>Separator character:</Label>
-                <TextBox Name="tbSeparator" MaxLength="1" Style="{StaticResource placeHolder}"
+                <Label Content="Separator character:"/>
+                <TextBox x:Name="tbSeparator" MaxLength="1" Style="{StaticResource placeHolder}"
                          Tag="Will override random selection from separator alphabet" />
             </DockPanel>
             <DockPanel LastChildFill="False">
-                <Label>Number of words in password:</Label>
-                <TextBox Name="tbWordCount" Width="50" Text="4" KeyUp="tbNumWords_KeyUp" />
+                <Label Content="Number of words in password:"/>
+                <TextBox x:Name="tbWordCount" Width="50" Text="4" KeyUp="tbNumWords_KeyUp" />
             </DockPanel>
             <DockPanel LastChildFill="False">
                 <DockPanel LastChildFill="True">
-                    <Label>Minimum word length:</Label>
-                    <TextBox Name="tbMinWordLength" Width="50" KeyUp="tbMinWordLength_KeyUp" Text="4" />
+                    <Label Content="Minimum word length:"/>
+                    <TextBox x:Name="tbMinWordLength" Width="50" KeyUp="tbMinWordLength_KeyUp" Text="4" />
                 </DockPanel>
                 <DockPanel LastChildFill="False">
-                    <Label>Maximum word length:</Label>
-                    <TextBox Name="tbMaxWordLength" Width="50" KeyUp="tbMaxWordLength_KeyUp" Text="8" />
+                    <Label Content="Maximum word length:"/>
+                    <TextBox x:Name="tbMaxWordLength" Width="50" KeyUp="tbMaxWordLength_KeyUp" Text="8" />
                 </DockPanel>
             </DockPanel>
             <DockPanel>
                 <DockPanel LastChildFill="True">
-                    <Label>Number of padding digits before:</Label>
-                    <TextBox Name="tbPadDigitsBefore" Width="50" KeyUp="tbPadDigitsBefore_KeyUp" Text="0" />
+                    <Label Content="Number of padding digits before:"/>
+                    <TextBox x:Name="tbPadDigitsBefore" Width="50" KeyUp="tbPadDigitsBefore_KeyUp" Text="0" />
                 </DockPanel>
                 <DockPanel LastChildFill="False">
-                    <Label>Number of padding digits after:</Label>
-                    <TextBox Name="tbPadDigitsAfter" Width="50" KeyUp="tbPadDigitsAfter_KeyUp" Text="2" />
+                    <Label Content="Number of padding digits after:"/>
+                    <TextBox x:Name="tbPadDigitsAfter" Width="50" KeyUp="tbPadDigitsAfter_KeyUp" Text="2" />
                 </DockPanel>
             </DockPanel>
             <DockPanel LastChildFill="False">
-                <Label>Padding type:</Label>
-                <ComboBox Name="cbPaddingType" SelectedIndex="1">
-                    <ComboBox.Items>
-                        <ComboBoxItem>None</ComboBoxItem>
-                        <ComboBoxItem>Fixed</ComboBoxItem>
-                        <ComboBoxItem>Adaptive</ComboBoxItem>
-                    </ComboBox.Items>
+                <Label Content="Padding type:"/>
+                <ComboBox x:Name="cbPaddingType" SelectedIndex="1">
+                    <ComboBoxItem Content="None"/>
+                    <ComboBoxItem Content="Fixed"/>
+                    <ComboBoxItem Content="Adaptive"/>
                 </ComboBox>
             </DockPanel>
             <DockPanel>
-                <Label>Padding character:</Label>
-                <TextBox Name="tbPaddingChar" MaxLength="1" Style="{StaticResource placeHolder}"
+                <Label Content="Padding character:"/>
+                <TextBox x:Name="tbPaddingChar" MaxLength="1" Style="{StaticResource placeHolder}"
                          Tag="Will override random selection from symbol alphabet" />
             </DockPanel>
             <DockPanel>
                 <DockPanel>
-                    <Label>Number of padding characters before:</Label>
-                    <TextBox Name="tbPadCharsBefore" Width="50" KeyUp="tbPadCharsBefore_KeyUp" Text="2" />
+                    <Label Content="Number of padding characters before:"/>
+                    <TextBox x:Name="tbPadCharsBefore" Width="50" KeyUp="tbPadCharsBefore_KeyUp" Text="2" />
                 </DockPanel>
                 <DockPanel LastChildFill="False">
-                    <Label>Number of padding characters after:</Label>
-                    <TextBox Name="tbPadCharsAfter" Width="50" KeyUp="tbPadCharsAfter_KeyUp" Text="2" />
+                    <Label Content="Number of padding characters after:"/>
+                    <TextBox x:Name="tbPadCharsAfter" Width="50" KeyUp="tbPadCharsAfter_KeyUp" Text="2" />
                 </DockPanel>
             </DockPanel>
             <DockPanel>
                 <DockPanel>
-                    <Label>Number of padding digits before:</Label>
-                    <TextBox Name="tbPadBefore" Width="50" Text="0" />
+                    <Label Content="Number of padding digits before:"/>
+                    <TextBox x:Name="tbPadBefore" Width="50" Text="0" />
                 </DockPanel>
                 <DockPanel LastChildFill="False">
-                    <Label>Number of padding digits after:</Label>
-                    <TextBox Name="tbPadAfter" Width="50" Text="2" />
+                    <Label Content="Number of padding digits after:"/>
+                    <TextBox x:Name="tbPadAfter" Width="50" Text="2" />
                 </DockPanel>
             </DockPanel>
             <DockPanel LastChildFill="False">
-                <Label>Pad to length:</Label>
-                <TextBox Name="tbPadLength" Width="50" KeyUp="tbPadLength_KeyUp" />
+                <Label Content="Pad to length:"/>
+                <TextBox x:Name="tbPadLength" Width="50" KeyUp="tbPadLength_KeyUp" />
             </DockPanel>
             <DockPanel LastChildFill="False">
-                <Label>Case transformation:</Label>
-                <ComboBox Name="cbCaseTransform" SelectedIndex="3">
-                    <ComboBox.Items>
-                        <ComboBoxItem>None</ComboBoxItem>
-                        <ComboBoxItem>ALL UPPERCASE</ComboBoxItem>
-                        <ComboBoxItem>all lowercase</ComboBoxItem>
-                        <ComboBoxItem>Capitalize Words</ComboBoxItem>
-                        <ComboBoxItem>iNVERTED cASE</ComboBoxItem>
-                        <ComboBoxItem>AlTeRnAtInG CaSe</ComboBoxItem>
-                        <ComboBoxItem>rANdoMly CAPitaLiZE</ComboBoxItem>
-                        <ComboBoxItem>RANDOMLY capitalize entire WORD</ComboBoxItem>
-                    </ComboBox.Items>
+                <Label Content="Case transformation:"/>
+                <ComboBox x:Name="cbCaseTransform" SelectedIndex="3">
+                    <ComboBoxItem Content="None"/>
+                    <ComboBoxItem Content="ALL UPPERCASE"/>
+                    <ComboBoxItem Content="all lowercase"/>
+                    <ComboBoxItem Content="Capitalize Words"/>
+                    <ComboBoxItem Content="iNVERTED cASE"/>
+                    <ComboBoxItem Content="AlTeRnAtInG CaSe"/>
+                    <ComboBoxItem Content="rANdoMly CAPitaLiZE"/>
+                    <ComboBoxItem Content="RANDOMLY capitalize entire WORD"/>
                 </ComboBox>
             </DockPanel>
             <DockPanel>
-                <Label>Replace characters:</Label>
-                <TextBox Name="tbReplaceCharacters" Width="150"></TextBox>
-                <Label>with characters:</Label>
-                <TextBox Name="tbWithCharacters" Width="150"></TextBox>
+                <Label Content="Replace characters:"/>
+                <TextBox x:Name="tbReplaceCharacters" Width="150"/>
+                <Label Content="with characters:"/>
+                <TextBox x:Name="tbWithCharacters" Width="150"/>
             </DockPanel>
-            <Button Name="btnGenerate" Margin="5,0" Click="btnGenerate_Click">Generate</Button>
-            <TextBox Name="tbPasswords" IsReadOnly="True" Margin="5" Height="100" MaxHeight="100"
+            <Button x:Name="btnGenerate" Margin="5,0" Click="btnGenerate_Click" Content="Generate"/>
+            <TextBox x:Name="tbPasswords" IsReadOnly="True" Margin="5" Height="100" MaxHeight="100"
                      VerticalScrollBarVisibility="Auto" UndoLimit="0" FontFamily="Consolas" />
         </StackPanel>
     </DockPanel>
